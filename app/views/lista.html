@@ -1,0 +1,81 @@
+<style>
+	td{
+		padding:0 10px;
+	}
+	th{
+		padding:10px;
+		color:#FFFFFF;
+		background-color:#000000;
+		font-size: 1.4em;
+	}
+	tr:hover {
+		color:#FFFFFF;
+		background-color: #828282
+	}
+	.bordeCircularI{
+		border-radius: 10px 0 0 0 ;
+	}
+	.bordeCircularD{
+		border-radius: 0 10px  0 0 ;
+	}
+
+	/* filas inpar */
+	.odd { 
+		background-color: #FFF;
+	}
+	/* filas par */
+	.even {
+		background-color: #ccc;
+	}
+
+	input{
+		margin:0 5px 5px 0;
+	}
+	.botonEspecial{
+		padding:0px 4px;
+	}
+</style>
+<h2>Ejemplo de Listas con ng-repeat</h2>
+<form role="form" ng-submit="anadirVocabulario()">
+	<div class="row">
+		<input type="text" class="col-md-2" placeholder="ID" ng-model="lineaVocabulario.I"  ng-blur="onblurId()" >
+		<input type="text" class="col-md-3" placeholder="LEVEL" ng-model="lineaVocabulario.N"  >
+		<input type="text" class="col-md-3" ng-model="lineaVocabulario.L" placeholder="LIST" >
+	</div>
+	<div class="row">
+		<input type="text" class="col-md-5" placeholder="ENGLISH" ng-model="lineaVocabulario.P"  >
+		<input type="text" class="col-md-5" placeholder="SPANISH" ng-model="lineaVocabulario.R"  >
+	</div>
+	<div class="row">
+		<button type="submit"  class="btn btn-primary">{{botonAnadir}}</button>
+		<button type="clear"  class="btn btn-primary">Clear</button>
+		<button type="button"  class="btn btn-danger" ng-click="borrarVocabulario()">Delete</button>
+	</div><br>
+</form>
+<table>
+	<thead>
+		<tr>
+			<th class="bordeCircularI">Id</th>
+			<th>Level</th>
+			<th>List</th>
+			<th>English</th>
+			<th>Spanish</th>
+			<th class="bordeCircularD"></th>
+		</tr>
+	</thead>
+	<tbody ui-sortable ng-model="vocIngles"> <!-- asi puedo mover las filas -->
+		<tr ng-repeat="v in vocIngles" ng-class-odd="'odd'" ng-class-even="'even'" >
+			<td ng-click="onclickTabla(v)">{{v.I}}</td>
+			<td ng-click="onclickTabla(v)">{{v.N}}</td>
+			<td ng-click="onclickTabla(v)">{{v.L}}</td>
+			<td ng-click="onclickTabla(v)">{{v.P}}</td>
+			<td ng-click="onclickTabla(v)">{{v.R}}</td>
+			<td><button type="button"  class="btn btn-danger botonEspecial" ng-click="borrarVocabulario($index)">X</button></td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
