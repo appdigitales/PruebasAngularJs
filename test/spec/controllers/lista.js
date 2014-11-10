@@ -44,8 +44,9 @@ describe('Controller: ListaCtrl', function () {
     });
   });
 
+
 describe('añadiendo y borrando a vocIngles', function() {
-  beforeEach(function(){ 
+  beforeEach(function() { 
     scope.lineaVocabulario={}; 
     scope.lineaVocabulario.I=(scope.vocIngles[scope.vocIngles.length-1].I)+1;
     scope.lineaVocabulario.T='V';
@@ -59,21 +60,19 @@ describe('añadiendo y borrando a vocIngles', function() {
     console.log('Añadido vocabulario. ahora hay:' + scope.vocIngles.length + ' en total');
   });
   it('borrando', function(){
-      scope.lineaVocabulario.I=40; //asigno al ngmodel del input ID el valor del que he creado.
-      scope.borrarVocabulario();
-      console.log('ha sido borrado. ahora hay:' + scope.vocIngles.length);
-      scope.lineaVocabulario.I=41;
-      scope.borrarVocabulario();
-      console.log('ha sido borrado. ahora hay:' + scope.vocIngles.length);
-      scope.lineaVocabulario.I=42;
-      scope.borrarVocabulario();
-      console.log('ha sido borrado. ahora hay:' + scope.vocIngles.length);
-      scope.lineaVocabulario.I=43;
-      scope.borrarVocabulario();
-      console.log('ha sido borrado. ahora hay:' + scope.vocIngles.length);
-    });
-
-
+        scope.lineaVocabulario.I=40; //asigno al ngmodel del input ID el valor del que he creado.
+        scope.borrarVocabulario();
+        console.log('ha sido borrado. ahora hay:' + scope.vocIngles.length);
+        scope.lineaVocabulario.I=41;
+        scope.borrarVocabulario();
+        console.log('ha sido borrado. ahora hay:' + scope.vocIngles.length);
+        scope.lineaVocabulario.I=42;
+        scope.borrarVocabulario();
+        console.log('ha sido borrado. ahora hay:' + scope.vocIngles.length);
+        scope.lineaVocabulario.I=43;
+        scope.borrarVocabulario();
+        console.log('ha sido borrado. ahora hay:' + scope.vocIngles.length);
+      });
 });
 
 // describe('pendientes, si al it le añades x el debuggeador no lo toma en cuenta', function(){

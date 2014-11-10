@@ -7,11 +7,12 @@
  * # MainCtrl
  * Controller of the pruebasAngularApp
  */
- angular.module('pruebasAngularApp')
- .controller('MainCtrl', function ($scope) {
- 	$scope.awesomeThings = [
- 	'HTML5 Boilerplate',
- 	'AngularJS',
- 	'Karma'
- 	];
- });
+angular.module('pruebasAngularApp')
+  .controller('MainCtrl', function($scope) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  });
+ 
