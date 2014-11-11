@@ -10,14 +10,15 @@
  */
  angular
  .module('pruebasAngularApp', [
-  'ngAnimate',
+  // 'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngRoute',
   'ngSanitize',
   'ngTouch',
   'ui.sortable',
-  'LocalStorageModule'
+  'LocalStorageModule',
+  'ui.bootstrap'
   ])
  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
   localStorageServiceProvider.setPrefix('pruebasA');
@@ -36,6 +37,10 @@
   .when('/lista', {
     templateUrl: 'views/lista.html',
     controller: 'ListaCtrl'
+  })
+  .when('/carousel', {
+    templateUrl: 'views/carousel.html',
+    controller: 'CarouselCtrl'
   })
   .otherwise({
     redirectTo: '/'

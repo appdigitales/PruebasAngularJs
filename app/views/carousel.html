@@ -1,0 +1,30 @@
+Para ver todo lo que se puede hacer entrar en: <a href="http://angular-ui.github.io/bootstrap/">Angular IU</a>
+<br><br>
+<!-- carousel -->
+<carousel interval="intervalo" >
+	<slide ng-repeat="slide in slides" active="slide.active">
+		<img class="img-rounded" ng-src="{{slide.image}}" style="margin:auto;">
+		<div class="carousel-caption">
+			<h4>Slide {{$index+1}}</h4>
+			<p>{{slide.text}}</p>
+		</div>
+	</slide>
+</carousel>
+
+
+<br><br>
+<accordion>
+	<accordion-group heading="{{slide.title}}" ng-repeat="slide in slides">
+	{{slide.text}}
+</accordion-group>
+</accordion>
+
+<br><br>
+<!-- galeria -->
+
+<div class="col-md-4 miniaturas" ng-repeat="imagen in imagenes">
+	<img ng-src="{{imagen.url}}" alt="">
+	<rating ng-model="rate" max="max" readonly="isreadonly"></rating>
+	<h3>{{imagen.titulo}}</h3>
+	<p>{{imagen.resumen}}</p>
+</div>
