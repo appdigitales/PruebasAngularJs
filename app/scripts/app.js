@@ -18,7 +18,8 @@
   'ngTouch',
   'ui.sortable',
   'LocalStorageModule',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngGrid'
   ])
  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
   localStorageServiceProvider.setPrefix('pruebasA');
@@ -41,6 +42,10 @@
   .when('/carousel', {
     templateUrl: 'views/carousel.html',
     controller: 'CarouselCtrl'
+  })
+  .when('/grid', {
+    templateUrl: 'views/grid.html',
+    controller: 'GridCtrl'
   })
   .otherwise({
     redirectTo: '/'

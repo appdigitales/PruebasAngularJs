@@ -68,6 +68,40 @@ body {
   }
 }
 
+.gridStyles{
+  margin:0 auto;
+  width:100%;
+  height:430px;
+}
+.ngRow.even {
+  background: White;
+}
+.ngRow.odd {
+  background: #E9F7FF;
+}
+.ngHeaderText, .ngGroupPanel, .ngFooterPanel{
+  background: #92D3FF;
+}
+.ngGroupPanel{
+  border-bottom: 1px solid #3981FF;
+}
+
+.ng-pristine, .ngPagerButton{
+  background: #FFFFFF;
+}
+.ngRow.selected {
+  background-color: #D3E7F4;
+}
+
+.ngRow.canSelect {
+  cursor: pointer;
+}
+
+.ngCellElement:focus {
+  outline: 0;
+  background-color: #C9DDF0;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -93,4 +127,14 @@ body {
   .miniaturas{
     padding-bottom: 60px;
   }
+  
 }
+
+@media screen and (min-width: 1200px) {
+  .gridStyles{
+    margin-left:-30%;
+    width:160%;
+    max-width: 1500px;
+  }
+}
+

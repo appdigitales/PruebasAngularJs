@@ -7,14 +7,13 @@
  * # ListaCtrl
  * Controller of the pruebasAngularApp
  */
-angular.module('pruebasAngularApp')
-  .controller('ListaCtrl', ['$scope', 'vocabularioIngles',
-    'localStorageService',
-    function($scope, vocabularioIngles, localStorageService) {
-      /******** AL CARGAR *************************/
+ angular.module('pruebasAngularApp')
+ .controller('ListaCtrl', ['$scope', 'localStorageService','vocabularioIngles', 
+  function($scope,  localStorageService, vocabularioIngles) {
+    /******** AL CARGAR *************************/
       //guardo en la variable vocIngles el localStorage vocIngles. si no existe, le paso el del servicio vocabularioIngles
       $scope.vocIngles = localStorageService.get('vocIngles') ||
-        vocabularioIngles.vocabulario;
+      vocabularioIngles.vocabulario;
 
       //con watch vigilo la variable vocIngles cuando modifique y lo grabo en localStorage
       $scope.$watch('vocIngles', function() {
@@ -37,20 +36,20 @@ angular.module('pruebasAngularApp')
 
       //boton borrar
       $scope.borrarVocabulario = function(index) {
-        if ($scope.lineaVocabulario.I !== undefined && $scope.lineaVocabulario
-          .I.length !== 0) {
-          //si index es indefinido es porque se pulsa fuera las tr, botón cerca de añadir/modificar, por lo tanto tiene que buscar la id
-          //por lo tanto tomo en cuenta lo que se escriba en el ngmodel lineaVocabulario.I (el input id)
-          if (index === undefined) {
-            for (var i = 0; i < $scope.vocIngles.length; i++) {
-              if ($scope.vocIngles[i].I === $scope.lineaVocabulario.I) {
-                $scope.vocIngles.splice(i, 1);
-                break;
-              }
+        //si es el boton Delete
+        if ($scope.lineaVocabulario.I !== undefined && $scope.lineaVocabulario.I.length !== 0 && index === undefined) {
+          for (var i = 0; i < $scope.vocIngles.length; i++) {
+            if ($scope.vocIngles[i].I === $scope.lineaVocabulario.I) {
+              $scope.vocIngles.splice(i, 1);
+              break;
             }
-          } else {
-            $scope.vocIngles.splice(index, 1);
           }
+          //si es el boton X de borrar
+        }else if (index !== undefined) {
+          $scope.vocIngles.splice(index, 1);
+          //si se ha pulsado a Delete y no hay id marcada
+        }else{
+          alert('No hay nada que borrar. Haga click a una linea')
         }
         $scope.lineaVocabulario = {};
       };
@@ -86,4 +85,4 @@ angular.module('pruebasAngularApp')
 
 
     }
-  ]);
+    ]);

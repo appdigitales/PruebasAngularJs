@@ -1,0 +1,10 @@
+<h1>Ejemplo de un Grid con paginación y filtros</h1>
+<p>
+	<input id="filtro" type="text" ng-model="miinput" placeholder="Filter text"  ng-blur="noPerderFoco()"/>
+</p>
+
+<div class="gridStyles" ng-grid="gridOpciones"></div>
+<!-- <div class="misItemsSeleccionados">{{mySelections}}</div> -->
+<div ng-repeat="s in mySelections">
+	ID: {{s.I}}<br>ENGLISH: {{s.P}}<br>SPANISH: {{s.R}} 
+</div>

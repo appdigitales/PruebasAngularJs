@@ -23,7 +23,7 @@ Para ver todo lo que se puede hacer entrar en: <a href="http://angular-ui.github
 <!-- galeria -->
 
 <div class="col-md-4 miniaturas" ng-repeat="imagen in imagenes">
-	<img ng-src="{{imagen.url}}" alt="">
+	<img ng-src="{{imagen.url}}" alt=""><br>
 	<rating ng-model="rate" max="max" readonly="isreadonly"></rating>
 	<h3>{{imagen.titulo}}</h3>
 	<p>{{imagen.resumen}}</p>
