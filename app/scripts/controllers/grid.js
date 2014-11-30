@@ -50,7 +50,7 @@
 					$scope.setPagingData(data,page,pageSize);
 				});            
 			} else {
-				$http.get('http://localhost:9000/json/voc.json').success(function (largeLoad) {
+				$http.get('json/voc.json').success(function (largeLoad) {
 					$scope.setPagingData(largeLoad,page,pageSize);
 				});
 			}
