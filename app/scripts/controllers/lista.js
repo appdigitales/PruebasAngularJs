@@ -49,7 +49,7 @@
           $scope.vocIngles.splice(index, 1);
           //si se ha pulsado a Delete y no hay id marcada
         }else{
-          alert('No hay nada que borrar. Haga click a una linea')
+          alert('No hay nada que borrar. Haga click a una linea');
         }
         $scope.lineaVocabulario = {};
       };
